@@ -1,10 +1,30 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./index.sass";
+import {
+  BrowserRouter as Router,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import LoadingView from "./componets/LoadingView/LoadingView";
+import SetTimerView from "./componets/SetTimerView/SetTimerView";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <LoadingView /> },
+      { path: "set-timer", element: <SetTimerView /> },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Router>
+      <RouterProvider router={router} />
+    </Router>
+  </React.StrictMode>
+);
