@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import "./TimerView.scss";
+import "./DigitalTimerView.scss";
 import { useNavigate } from "react-router-dom";
 
-const TimerView = () => {
+const DigitalTimerView = () => {
   const [secondsLeft, setSecondsLeft] = useState(60);
   const navigate = useNavigate();
 
@@ -19,12 +19,17 @@ const TimerView = () => {
     return () => clearInterval(timerID);
   }, [secondsLeft, navigate]);
 
+  const cancelTimer = () => {
+    navigate("/set-timer");
+  };
+
   return (
-    <div className="timer-view">
+    <div className="digital-timer-view">
       <h1>Timer View</h1>
       <p>Time Left: {secondsLeft} seconds</p>
+      <button onClick={cancelTimer}>Cancel Timer</button>
     </div>
   );
 };
 
-export default TimerView;
+export default DigitalTimerView;
