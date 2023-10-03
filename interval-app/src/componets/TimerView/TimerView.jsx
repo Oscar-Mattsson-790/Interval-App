@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./TimerView.sass";
+import "./TimerView.scss";
 import { useNavigate } from "react-router-dom";
 
 const TimerView = () => {

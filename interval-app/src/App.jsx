@@ -1,4 +1,4 @@
-import "./App.sass";
+import "./App.scss";
 import RouterComponent from "./router";
 
 function App() {

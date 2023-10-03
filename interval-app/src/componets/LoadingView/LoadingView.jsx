@@ -1,11 +1,11 @@
-import { useHistory } from "react-router-dom";
-import "./LoadingView.sass";
+import { useNavigate } from "react-router-dom";
+import "./LoadingView.scss";
 
 const LoadingView = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const navigateToSetTimer = () => {
-    history.push("/set-timer");
+    navigate("/set-timer");
   };
 
   return (

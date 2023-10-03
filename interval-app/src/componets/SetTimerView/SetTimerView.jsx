@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SetTimerView.sass";
+import "./SetTimerView.scss";
 
 const SetTimerView = () => {
   const [minutes, setMinutes] = useState("");
