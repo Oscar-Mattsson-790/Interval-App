@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./LoadingView.scss";
-import logo from "../../assets/Screenshot 2023-10-03 at 09.04.20.png";
+import logo from "../../assets/White.png";
 
 const LoadingView = () => {
   const navigate = useNavigate();
