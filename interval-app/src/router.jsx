@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import LoadingView from "./componets/LoadingView/LoadingView";
+import LoadingView from "../src/componets/LoadingView/LoadingView";
 import SetTimerView from "./componets/SetTimerView/SetTimerView";
-import AlarmView from "./componets/AlarmView/AlarmView";
-import PauseView from "./componets/PauseView/PauseView";
-import TimerView from "./componets/AnalogTimerView/TimerView";
+import AlarmView from "../src/componets/AlarmView/AlarmView";
+import PauseView from "../src/componets/PauseView/PauseView";
+import DigitalTimerView from "./componets/DigitalTimerView/DigitalTimerView";
+import AnalogTimerView from "./componets/AnalogTimerView/AnalogTimerView";
 
 const RouterComponent = () => {
   return (
@@ -12,7 +13,8 @@ const RouterComponent = () => {
       <Route path="set-timer" element={<SetTimerView />} />
       <Route path="alarm" element={<AlarmView />} />
       <Route path="pause" element={<PauseView />} />
-      <Route path="timer" element={<TimerView />} />
+      <Route path="digital-timer" element={<DigitalTimerView />} />
+      <Route path="analog-timer" element={<AnalogTimerView />} />
     </Routes>
   );
 };
