@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./LoadingView.scss";
+import logo from "../../assets/Screenshot 2023-10-03 at 09.04.20.png";
 
 const LoadingView = () => {
   const navigate = useNavigate();
@@ -11,8 +12,9 @@ const LoadingView = () => {
   return (
     <div className="loading-view">
       <div className="logo" onClick={navigateToSetTimer}>
-        <h1>Your Logo</h1>
-        <p>Your Slogan</p>
+        <img className="IntervalLogo" src={logo} alt="IntervalLogo" />
+        <h1>INTERVAL</h1>
+        <p>For all your timing needs</p>
       </div>
     </div>
   );
