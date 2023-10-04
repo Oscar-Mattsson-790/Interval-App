@@ -1,32 +1,40 @@
-import { useState, useEffect } from "react";
-import "./AnalogTimerView.scss";
+import { useEffect, useState } from "react";
+import Timer from "easytimer.js";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./AnalogTimerView.scss";
 
 const AnalogTimerView = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [secondsLeft, setSecondsLeft] = useState(
-    (location.state?.minutesLeft || 1) * 60
-  );
+  const [timer] = useState(new Timer());
+  const [timeValues, setTimeValues] = useState({ minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const timerID = setInterval(() => {
-      setSecondsLeft((prev) => prev - 1);
-    }, 1000);
+    timer.start({
+      countdown: true,
+      startValues: { minutes: location.state?.minutesLeft || 1 },
+    });
 
-    if (secondsLeft === 0) {
+    timer.on("secondsUpdated", () => {
+      setTimeValues({
+        minutes: timer.getTimeValues().minutes,
+        seconds: timer.getTimeValues().seconds,
+      });
+    });
+
+    timer.on("targetAchieved", () => {
       navigate("/alarm");
-      clearInterval(timerID);
-    }
+    });
 
-    return () => clearInterval(timerID);
-  }, [secondsLeft, navigate]);
+    return () => timer.stop();
+  }, [timer, navigate, location.state?.minutesLeft]);
 
   const cancelTimer = () => {
+    timer.stop();
     navigate("/set-timer");
   };
 
-  const rotate = (360 * secondsLeft) / 60;
+  const rotate = (360 * timeValues.seconds) / 60;
 
   return (
     <div className="analog-timer-view">
