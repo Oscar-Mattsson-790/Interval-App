@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999; // Ensure the whole menu is above other elements
 
     ul {
       list-style-type: none;
