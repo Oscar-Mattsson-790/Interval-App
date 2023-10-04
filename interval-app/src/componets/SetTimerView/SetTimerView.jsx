@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SetTimerView.scss";
 
 const SetTimerView = () => {
@@ -6,6 +7,7 @@ const SetTimerView = () => {
   const [timeLeft, setTimeLeft] = useState(minutes * 60);
   const [isRunning, setIsRunning] = useState(false);
   const [isInterval, setIsInterval] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let timer;
@@ -24,6 +26,7 @@ const SetTimerView = () => {
 
   const startTimer = () => {
     setIsRunning(true);
+    navigate("/analog-timer");
   };
 
   const handleOptionChange = (e) => {

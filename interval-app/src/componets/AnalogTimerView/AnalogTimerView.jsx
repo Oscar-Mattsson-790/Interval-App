@@ -9,7 +9,7 @@ const AnalogTimerView = () => {
   useEffect(() => {
     const timerID = setInterval(() => {
       setSecondsLeft((prev) => prev - 1);
-    }, 1000);
+    }, 9000);
 
     if (secondsLeft === 0) {
       navigate("/alarm");
@@ -27,14 +27,15 @@ const AnalogTimerView = () => {
 
   return (
     <div className="analog-timer-view">
-      <h1>Analog Timer View</h1>
+      <h1>interval</h1>
       <div className="clock-face">
+        <div className="hour-markers"></div>
         <div
           className="hand"
           style={{ transform: `rotate(${rotate}deg)` }}
         ></div>
       </div>
-      <button onClick={cancelTimer}>Cancel Timer</button>
+      <button onClick={cancelTimer}>ABORT TIMER</button>
     </div>
   );
 };
