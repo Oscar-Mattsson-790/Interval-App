@@ -8,7 +8,7 @@ const Dropdown = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const hideOnRoutes = ["/pause", "/alarm", "/loading"];
+  const hideOnRoutes = ["/pause", "/alarm", "/"];
 
   if (hideOnRoutes.includes(location.pathname)) {
     return null;
