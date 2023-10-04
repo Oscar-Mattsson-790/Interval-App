@@ -1,10 +1,63 @@
+@import "../../scss/typography";
+@import "../../scss/variables";
+
 .pause-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: $black;
+  color: $white;
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: auto;
+    padding: 20px;
+    height: 100%;
+  }
+
   h1 {
-    color: orange;
-    font-size: 2em;
+    font-size: 36px;
+    margin-top: 50px;
   }
-  p {
-    color: gray;
-    font-size: 1.5em;
+
+  .pauseLogo {
+    width: 40px;
+    height: 50px;
+    color: $black;
+    filter: invert(100%);
+    margin-top: 220px;
   }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 186px;
+    height: 41px;
+    border-radius: 5px;
+    border: 1.5px solid $middleGrey;
+    padding: 10px;
+    background-color: $black;
+    color: $middleGrey;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.7px;
+    letter-spacing: 10%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.time {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31.06px;
+  color: $middleGrey;
+  margin-top: 20px;
 }
