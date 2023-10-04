@@ -1,3 +1,6 @@
+@import "../../scss/typography";
+@import "../../scss/variables";
+
 .digital-timer-view {
   display: flex;
   flex-direction: column;
@@ -15,6 +18,7 @@ h1 {
 p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: $black;
 
   &.time {
     font-size: 4rem;

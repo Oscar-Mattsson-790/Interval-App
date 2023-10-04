@@ -25,9 +25,9 @@ const DigitalTimerView = () => {
 
   return (
     <div className="digital-timer-view">
-      <h1>Timer View</h1>
-      <p>Time Left: {secondsLeft} seconds</p>
-      <button onClick={cancelTimer}>Cancel Timer</button>
+      <h1>interval</h1>
+      <p>{secondsLeft}</p>
+      <button onClick={cancelTimer}>ABORT TIMER</button>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./SetTimerView.scss";
 
 const SetTimerView = () => {
   const [minutes, setMinutes] = useState(10);
-  const [timeLeft, setTimeLeft] = useState(minutes * 60);
+  const [timeLeft, setTimeLeft] = useState(minutes);
   const [isRunning, setIsRunning] = useState(false);
   const [isInterval, setIsInterval] = useState(true);
   const navigate = useNavigate();
@@ -12,12 +12,12 @@ const SetTimerView = () => {
   useEffect(() => {
     let timer;
     if (isRunning && timeLeft > 0) {
-      timer = setIsInterval(() => {
+      timer = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
-      }, 1000);
+      }, 60000);
     } else if (timeLeft === 0) {
-      setIsInterval(false);
-      setTimeLeft(isInterval ? minutes * 60 : 5 * 60);
+      setIsRunning(false);
+      setTimeLeft(isInterval ? minutes : 5);
     } else {
       clearInterval(timer);
     }
