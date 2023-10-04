@@ -125,3 +125,16 @@ span {
   margin-top: 20px;
   margin-bottom: 50px;
 }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.hamburgerBlack {
+  width: 32px;
+  height: 32px;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SetTimerView.scss";
+import hamburgerBlack from "../../assets/black.png";
 
 const SetTimerView = () => {
   const [minutes, setMinutes] = useState(10);
@@ -39,6 +40,14 @@ const SetTimerView = () => {
 
   return (
     <div className="set-timer-view">
+      <nav className="navbar">
+        <img
+          className="hamburgerBlack"
+          src={hamburgerBlack}
+          alt="hamburgerBlack"
+        />
+      </nav>
+
       <div className="timeWrapper">
         <p onClick={decrementTime}>
           <i className="arrow left"></i>
