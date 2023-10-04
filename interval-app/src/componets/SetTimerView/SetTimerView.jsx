@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SetTimerView.scss";
-import hamburgerBlack from "../../assets/black.png";
-import Dropdown from "../Dropdown/Dropdown";
 
 const SetTimerView = () => {
   const [minutes, setMinutes] = useState(10);
@@ -10,12 +8,6 @@ const SetTimerView = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [isInterval, setIsInterval] = useState(true);
   const navigate = useNavigate();
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
   useEffect(() => {
     let timer;
@@ -47,16 +39,6 @@ const SetTimerView = () => {
 
   return (
     <div className="set-timer-view">
-      <nav className="navbar">
-        <img
-          className="hamburgerBlack"
-          src={hamburgerBlack}
-          alt="hamburgerBlack"
-          onClick={toggleDropdown}
-        />
-        {isDropdownOpen && <Dropdown />}
-      </nav>
-
       <div className="timeWrapper">
         <p onClick={decrementTime}>
           <i className="arrow left"></i>

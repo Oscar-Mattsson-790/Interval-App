@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./AnalogTimerView.scss";
 import { useNavigate, useLocation } from "react-router-dom";
-import hamburgerBlack from "../../assets/black.png";
 
 const AnalogTimerView = () => {
   const navigate = useNavigate();
@@ -31,13 +30,6 @@ const AnalogTimerView = () => {
 
   return (
     <div className="analog-timer-view">
-      <nav className="navbar">
-        <img
-          className="hamburgerBlack"
-          src={hamburgerBlack}
-          alt="hamburgerBlack"
-        />
-      </nav>
       <h1>interval</h1>
       <div className="clock-face">
         <div className="hour-markers"></div>
