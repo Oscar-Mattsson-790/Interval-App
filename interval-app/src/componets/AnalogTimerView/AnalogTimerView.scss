@@ -1,47 +1,51 @@
 @import "../../scss/typography";
 @import "../../scss/variables";
 
-.alarm-view {
+.analog-timer-view {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
-  background-color: black;
-
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+  background-color: #f8f8f8;
+  padding: 20px;
 
   h1 {
-    color: $white;
-    margin-top: 20px;
+    color: #333;
+    margin-bottom: 20px;
   }
 
-  .bellLogo {
-    width: 84.9px;
-    height: 85.06px;
-    color: $white;
-    filter: invert(100%);
+  .clock-face {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #333;
+    border-radius: 50%;
+  }
+
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background-color: #333;
+    transform-origin: bottom;
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
   }
 
   button {
-    width: 132px;
-    height: 41px;
-    border-radius: 5px;
-    border: 1.5px solid $middleGrey;
-    padding: 10px;
-    background-color: $black;
-    color: $middleGrey;
-    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
     font-size: 16px;
-    line-height: 31.06px;
-    letter-spacing: 10%;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #555;
+    }
   }
 }

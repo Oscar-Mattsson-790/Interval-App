@@ -7,8 +7,8 @@
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: black;
+  padding: 20px;
 
   .content-container {
     display: flex;
@@ -16,22 +16,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: auto;
-    padding: 20px;
-    height: 100%;
-  }
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  h1 {
-    font-size: 2rem;
-    margin-top: 20px;
-  }
+    h1 {
+      color: $white;
+      margin-top: 20px;
+    }
 
-  .bellLogo {
-    width: 84.9px;
-    height: 85.06px;
-    color: $black;
-    filter: invert(100%);
-    margin-top: 220px;
+    .bellLogo {
+      width: 84.9px;
+      height: 85.06px;
+      filter: invert(100%);
+    }
   }
 
   button {
@@ -43,13 +42,12 @@
     border-radius: 5px;
     border: 1.5px solid $middleGrey;
     padding: 10px;
-    background-color: $white;
+    background-color: $black;
     color: $middleGrey;
     font-weight: 700;
     font-size: 16px;
     line-height: 31.06px;
     letter-spacing: 10%;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 }
