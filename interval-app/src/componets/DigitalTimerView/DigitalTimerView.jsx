@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./DigitalTimerView.scss";
 import { useNavigate, useLocation } from "react-router-dom";
+import hamburgerBlack from "../../assets/black.png";
 
 const DigitalTimerView = () => {
   const navigate = useNavigate();
@@ -38,6 +39,13 @@ const DigitalTimerView = () => {
 
   return (
     <div className="digital-timer-view">
+      <nav className="navbar">
+        <img
+          className="hamburgerBlack"
+          src={hamburgerBlack}
+          alt="hamburgerBlack"
+        />
+      </nav>
       <h1>interval</h1>
       <p className="time">
         {minutesLeft}:{displaySeconds}

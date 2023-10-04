@@ -1,0 +1,38 @@
+.dropdown {
+  position: relative;
+
+  img {
+    cursor: pointer;
+    width: 32px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 15px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #555;
+        }
+      }
+    }
+  }
+}
