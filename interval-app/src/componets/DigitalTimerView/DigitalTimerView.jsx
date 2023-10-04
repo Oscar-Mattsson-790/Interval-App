@@ -3,8 +3,8 @@ import "./DigitalTimerView.scss";
 import { useNavigate } from "react-router-dom";
 
 const DigitalTimerView = () => {
-  const [minutesLeft, setMinutesLeft] = useState(1); // set initial minute
-  const [secondsLeft, setSecondsLeft] = useState(0); // set initial second
+  const [minutesLeft, setMinutesLeft] = useState(1);
+  const [secondsLeft, setSecondsLeft] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const DigitalTimerView = () => {
 
   return (
     <div className="digital-timer-view">
-      <h1>Interval</h1>
+      <h1>interval</h1>
       <p className="time">
         {minutesLeft}:{displaySeconds}
       </p>
