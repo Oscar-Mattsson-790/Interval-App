@@ -26,7 +26,7 @@ const SetTimerView = () => {
 
   const startTimer = () => {
     setIsRunning(true);
-    navigate("/analog-timer");
+    navigate("/analog-timer", { state: { minutesLeft: minutes } });
   };
 
   const handleOptionChange = (e) => {

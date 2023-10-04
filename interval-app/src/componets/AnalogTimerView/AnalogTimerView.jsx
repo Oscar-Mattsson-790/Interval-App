@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import "./AnalogTimerView.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const AnalogTimerView = () => {
-  const [secondsLeft, setSecondsLeft] = useState(60);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [secondsLeft, setSecondsLeft] = useState(
+    (location.state?.minutesLeft || 1) * 60
+  );
 
   useEffect(() => {
     const timerID = setInterval(() => {
       setSecondsLeft((prev) => prev - 1);
-    }, 9000);
+    }, 1000);
 
     if (secondsLeft === 0) {
       navigate("/alarm");

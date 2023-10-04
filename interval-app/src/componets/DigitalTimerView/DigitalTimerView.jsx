@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import "./DigitalTimerView.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const DigitalTimerView = () => {
-  const [minutesLeft, setMinutesLeft] = useState(1);
-  const [secondsLeft, setSecondsLeft] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [minutesLeft, setMinutesLeft] = useState(
+    location.state?.minutesLeft || 1
+  );
+  const [secondsLeft, setSecondsLeft] = useState(0);
 
   useEffect(() => {
     const timerID = setInterval(() => {
