@@ -1,12 +1,15 @@
 import "./PauseView.scss";
 import pauseLogo from "../../assets/pause.png";
 import { useNavigate } from "react-router-dom";
+import { useTimer } from "../../contexts/TimerContext";
 
 const PauseView = () => {
   const navigate = useNavigate();
+  const { resumeTimer } = useTimer();
 
   const cancelPauseAndGo = () => {
-    navigate("/set-timer");
+    resumeTimer();
+    navigate("/analog-timer");
   };
 
   return (
