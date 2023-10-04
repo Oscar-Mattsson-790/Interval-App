@@ -1,11 +1,18 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Dropdown.scss";
 import hamburgerBlack from "../../assets/black.png";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const hideOnRoutes = ["/pause", "/alarm", "/loading"];
+
+  if (hideOnRoutes.includes(location.pathname)) {
+    return null;
+  }
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -29,13 +36,9 @@ const Dropdown = () => {
             <li onClick={() => handleNavigation("/digital-timer")}>
               DIGITAL TIMER
             </li>
-            <li onClick={() => handleNavigation("/visual-timer")}>
-              VISUAL TIMER
-            </li>
-            <li onClick={() => handleNavigation("/pause")}>TEXT TIMER</li>
-            <li onClick={() => handleNavigation("/circles-timer")}>
-              CIRCLES TIMER
-            </li>
+            <li onClick={() => handleNavigation("/")}>VISUAL TIMER</li>
+            <li onClick={() => handleNavigation("/")}>TEXT TIMER</li>
+            <li onClick={() => handleNavigation("/")}>CIRCLES TIMER</li>
           </ul>
         </div>
       )}
